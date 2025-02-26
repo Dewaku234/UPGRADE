@@ -29,6 +29,34 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
+/*==================== DROPDOWN FUNCTIONALITY ====================*/
+document.querySelectorAll('.nav__dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        e.preventDefault(); // Mencegah default link
+        e.stopPropagation(); // Mencegah event bubbling
+
+        const dropdown = toggle.parentElement; // Ambil elemen dropdown terkait
+
+        // Toggle class 'active' pada dropdown yang diklik
+        dropdown.classList.toggle('active');
+
+        // Tutup dropdown lain yang mungkin terbuka
+        document.querySelectorAll('.nav__dropdown').forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove('active');
+            }
+        });
+    });
+});
+
+// Tutup dropdown saat klik di luar
+document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav__dropdown').forEach(dropdown => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+});
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader(){
