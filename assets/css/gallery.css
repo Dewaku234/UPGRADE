@@ -379,7 +379,6 @@ body{
 .column{
     flex: 25%;
     max-width: 25%;
-    padding: 5px;
 }
 .img-hover-zoom{
     height: auto;
@@ -388,7 +387,7 @@ body{
 .img-hover-zoom img{
     vertical-align: middle;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     border: 0;
     transition:  transform .5s ease;
 }
