@@ -19,29 +19,29 @@
   --text-color-light: hsl(var(--hue-color), 8%, 60%);
   --input-color: hsl(var(--hue-color), 24%, 97%);
   --body-color: hsl(var(--hue-color), 100%, 99%);
-  --white-color: #FFF;
+  --white-color: #fff;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 75%);
 
   /*========== Font and typography ==========*/
-  --body-font: 'Open Sans', sans-serif;
-  --title-font: 'Raleway', sans-serif;
+  --body-font: "Open Sans", sans-serif;
+  --title-font: "Raleway", sans-serif;
   --biggest-font-size: 2.5rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-medium: 500;
   --font-semi-bold: 600;
 
   /*========== Margenes Bottom ==========*/
-  --mb-0-25: .25rem;
-  --mb-0-5: .5rem;
-  --mb-0-75: .75rem;
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
   --mb-1: 1rem;
   --mb-1-25: 1.25rem;
   --mb-1-5: 1.5rem;
@@ -53,7 +53,7 @@
   --z-fixed: 100;
 
   /*========== Hover overlay ==========*/
-  --img-transition: .3s;
+  --img-transition: 0.3s;
   --img-hidden: hidden;
   --img-scale: scale(1.1);
 }
@@ -65,8 +65,8 @@
     --h2-font-size: 1.75rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -91,8 +91,9 @@ body.dark-theme {
   bottom: 4rem;
 }
 
-.change-theme, .change-theme-name {
-    color: var(--title-color) !important;
+.change-theme,
+.change-theme-name {
+  color: var(--title-color) !important;
 }
 
 .change-theme {
@@ -123,7 +124,9 @@ body {
   color: var(--text-color);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
   font-family: var(--title-font);
@@ -204,13 +207,14 @@ input {
   align-items: center;
 }
 
-.nav__logo, .nav__toggle {
-  color: var(--white-color);
+.nav__logo,
+.nav__toggle {
+  color: var(--title-color);
 }
 
 .nav__logo {
   font-weight: var(--font-semi-bold);
-  color:var(--title-color)
+  color: var(--title-color);
 }
 
 .nav__toggle {
@@ -220,25 +224,6 @@ input {
 
 .nav__menu {
   position: relative;
-}
-
-@media screen and (max-width: 767px) {
-  .nav__menu {
-    position: fixed;
-    background-color: var(--body-color);
-    top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100%;
-    box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
-    padding: 3rem;
-    transition: .4s;
-
-            overflow-y: auto; /* Aktifkan scroll vertikal */
-            overflow-x: hidden; /* Hindari scroll horizontal */
-            scrollbar-width: thin; /* Untuk browser yang mendukung (Firefox) */
-            scrollbar-color: #888 #f1f1f1; /* Warna scrollbar */
-  }
 }
 
 .nav__list {
@@ -259,7 +244,7 @@ input {
 
 .nav__close {
   position: absolute;
-  top: .75rem;
+  top: 0.75rem;
   right: 1rem;
   font-size: 1.5rem;
   color: var(--title-color);
@@ -268,7 +253,7 @@ input {
 
 /* Dropdown styles */
 .nav__dropdown {
-  position: relative; /* Tetap relatif terhadap parent */
+  position: relative;
 }
 
 .nav__dropdown-toggle {
@@ -279,9 +264,9 @@ input {
 }
 
 .nav__submenu {
-  display: none; /* Submenu disembunyikan secara default */
-  position: absolute; /* Dropdown muncul di atas elemen lain */
-  top: 100%; /* Muncul di bawah tombol "Brands" */
+  display: none;
+  position: absolute;
+  top: 100%;
   left: 0;
   background-color: var(--body-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -289,7 +274,7 @@ input {
   margin: 0;
   padding: 0.5rem 0;
   min-width: 150px;
-  z-index: 1000; /* Pastikan dropdown muncul di atas elemen lain */
+  z-index: 1000;
 }
 
 .nav__submenu .nav__sublink {
@@ -306,22 +291,40 @@ input {
   color: var(--text-color);
 }
 
-/* Tampilkan submenu saat dropdown aktif */
 .nav__dropdown.active .nav__submenu {
   display: block;
 }
 
 /* Responsive styles */
 @media screen and (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--body-color);
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    box-shadow: -1px 0 4px rgba(14, 55, 63, 0.15);
+    padding: 3rem;
+    transition: 0.4s;
+
+    overflow-y: auto; /* Aktifkan scroll vertikal */
+    overflow-x: hidden; /* Hindari scroll horizontal */
+    scrollbar-width: thin; /* Untuk browser yang mendukung (Firefox) */
+    scrollbar-color: #888 #f1f1f1; /* Warna scrollbar */
+  }
+}
+
+@media screen and (max-width: 767px) {
   .nav__dropdown .nav__submenu {
-      position: static; /* Dropdown mengikuti alur dokumen */
-      box-shadow: none;
-      padding-left: 1rem;
-      background-color: transparent; /* Sesuaikan dengan desain Anda */
+    position: static; /* Dropdown mengikuti alur dokumen */
+    box-shadow: none;
+    padding-left: 1rem;
+    background-color: transparent; /* Sesuaikan dengan desain Anda */
   }
 
   .nav__dropdown.active .nav__submenu {
-      display: block;
+    display: block;
   }
 }
 
@@ -348,24 +351,55 @@ input {
 }
 
 .active-link::before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: var(--title-color);
   width: 100%;
   height: 2px;
-  bottom: -.75rem;
+  bottom: -0.75rem;
   left: 0;
 }
 
 /*=============== CONTACT ===============*/
 
+/* Animasi Fade-In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-/* Gaya khusus untuk section contact */
+/* Animasi Floating untuk Ikon Kontak */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px); /* Gerakan lebih halus */
+  }
+}
+
+/* Animasi Slide-In untuk Peta */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px); /* Gerakan lebih halus */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .contact-section {
   flex-direction: column;
   text-align: center;
-  width: 90%;
-  max-width: 550px;
+  max-width: 1020px !important;
   margin: auto;
   margin-top: 11em;
 }
@@ -374,31 +408,20 @@ input {
   text-transform: capitalize;
   font-weight: bold;
   font-size: 1.1rem;
-  color: var(--primaryColor);
-  margin-bottom: .5em;
-}
-
-.heading, .sub-heading {
-  margin-bottom: .5em;
-  font-weight: bold;
+  color: var(--h1-font-size);
+  margin-bottom: 0.5em;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s; /* Delay untuk animasi */
 }
 
 .heading {
   font-size: 2.5em;
-}
-
-.sub-heading {
-  text-align: left;
-}
-
-.contactForm {
-  display: grid;
-  gap: 3em;
-}
-
-form {
-  width: 100%;
-  margin-top: 3em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.4s; /* Delay untuk animasi */
 }
 
 .para {
@@ -406,10 +429,36 @@ form {
   font-size: 1.1rem;
   line-height: 1.5em;
   margin-bottom: 1em;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.6s; /* Delay untuk animasi */
+}
+
+.contactForm {
+  display: grid;
+  gap: 3em;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.8s; /* Delay untuk animasi */
+}
+
+form {
+  width: 100%;
+  margin-top: 3em;
+}
+
+.sub-heading {
+  text-align: left;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1s; /* Delay untuk animasi */
 }
 
 .para2 {
   text-align: left;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1.2s; /* Delay untuk animasi */
 }
 
 .input {
@@ -420,15 +469,35 @@ form {
   padding: 1em;
   outline: none;
   background-color: #ffffff;
-  color: var(--paraColor);
+  color: var(--text-color);
   border-radius: 0px;
   margin-bottom: 1em;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Animasi satu per satu untuk input fields */
+.input[name="name"] {
+  animation-delay: 1.4s; /* Nama muncul pertama */
+}
+
+.input[name="email"] {
+  animation-delay: 1.6s; /* Email muncul berikutnya */
+}
+
+.input[name="subject"] {
+  animation-delay: 1.8s; /* Subjek muncul setelahnya */
+}
+
+.input[name="message"] {
+  animation-delay: 2s; /* Pesan muncul terakhir */
 }
 
 .input:focus {
-  box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.3);
-  border: 1px solid var(--primaryColor);
+  box-shadow: 0px 4px 12px rgba(20, 80, 92, 0.3);
+  border: 1px solid var(--text-color-light);
 }
 
 .input::placeholder {
@@ -438,7 +507,6 @@ form {
 body.dark-theme .input {
   background-color: var(--input-color);
   color: var(--title-color);
-  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
 }
 
 body.dark-theme .input::placeholder {
@@ -446,18 +514,31 @@ body.dark-theme .input::placeholder {
 }
 
 .submit {
-  background-color: var(--first-color-second);
+  background-color: var(--first-color) !important;
   border: none;
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
   width: 100%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 2.2s; /* Delay untuk animasi */
+}
+
+.submit:hover {
+  background-color: var(--first-color-alt) !important;
+  transform: scale(1.05); /* Animasi scale saat hover */
 }
 
 .map-container {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 483px;
+  opacity: 0; /* Mulai dari transparan */
+  animation: slideIn 1s ease-out forwards;
+  animation-delay: 2.4s; /* Delay untuk animasi */
+  top: 5.5px;
 }
 
 .mapBg {
@@ -491,75 +572,127 @@ body.dark-theme .input::placeholder {
   margin-top: 2em;
   text-align: left;
   margin-bottom: 5rem;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 2.6s; /* Delay untuk animasi */
 }
 
 .method {
   display: flex;
   align-items: center;
   margin-left: 0em;
+  opacity: 0; /* Mulai dari transparan */
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.method:nth-child(1) {
+  animation-delay: 2.8s; /* Delay untuk animasi */
+}
+
+.method:nth-child(2) {
+  animation-delay: 3s; /* Delay untuk animasi */
+}
+
+.method:nth-child(3) {
+  animation-delay: 3.2s; /* Delay untuk animasi */
 }
 
 .contactIcon {
   font-size: 2rem;
   color: var(--primaryColor);
   width: 70px;
+  animation: float 4s ease-in-out infinite; /* Animasi floating lebih pelan */
+}
+
+/* Keyframes untuk animasi floating */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px); /* Gerakan naik turun */
+  }
+}
+
+/* Keyframes untuk animasi shake yang soft, slow, dan smooth */
+@keyframes softShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-1px); /* Goyang ke kiri (lebih kecil) */
+  }
+  50% {
+    transform: translateX(1px); /* Goyang ke kanan (lebih kecil) */
+  }
+  75% {
+    transform: translateX(-1px); /* Goyang ke kiri lagi (lebih kecil) */
+  }
+}
+
+/* Mode mobile: Ganti animasi floating dengan softShake */
+@media (max-width: 768px) {
+  .contactIcon {
+    animation: softShake 4s ease-in-out infinite; /* Animasi shake yang lebih lambat dan halus */
+  }
 }
 
 .link {
   color: var(--text-color);
   text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .link:hover {
-  color: #333;
+  color: var(--first-color); /* Warna saat hover */
   text-decoration: underline;
 }
 
 @media (max-width: 768px) {
   .contact-section {
-    margin-top: 7em; /* Reduce top margin for smaller screens */
-    width: 90%; /* Increase width for better use of space */
+    margin-top: 7em;
+    width: 90%;
   }
 }
 
 @media (max-width: 480px) {
   .contact-section {
-    margin-top: 7em; /* Further reduce top margin for very small screens */
-    width: 90%; /* Use full width on very small screens */
+    margin-top: 7em;
+    width: 90%;
   }
 }
 
 @media (max-width: 768px) {
   .map-container {
-      height: auto;
-      padding-top: 100%;
+    height: auto;
+    padding-top: 100%;
   }
 
   .map {
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
 
   .map iframe {
-      width: 100%;
-      height: 100%;
+    width: 100%;
+    height: 100%;
   }
 }
 
 @media screen and (min-width: 800px) {
   .contact-section {
-      max-width: 1100px;
+    max-width: 1100px;
   }
 
   .contactForm {
-      grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .contactMethod {
-      flex-direction: row;
-      justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -570,7 +703,7 @@ body.dark-theme .input::placeholder {
   color: var(--white-color);
   padding: 1rem 2rem;
   font-weight: var(--font-semi-bold);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .button:hover {
@@ -580,7 +713,7 @@ body.dark-theme .input::placeholder {
 .button--flex {
   display: flex;
   align-items: center;
-  column-gap: .25rem;
+  column-gap: 0.25rem;
 }
 
 .button--link {
@@ -619,15 +752,13 @@ body.dark-theme .input::placeholder {
   font-size: 1.2rem;
 }
 
-
-
 /*=============== SUBSCRIBE ===============*/
 .subscribe__bg {
   background-color: var(--first-color-second);
   padding: 2.5rem 0;
 }
 
-.subscribe__title, 
+.subscribe__title,
 .subscribe__description {
   color: var(--white-color);
 }
@@ -639,14 +770,14 @@ body.dark-theme .input::placeholder {
 
 .subscribe__form {
   background-color: var(--input-color);
-  padding: .5rem;
+  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
 }
 
 .subscribe__input {
   width: 70%;
-  padding-right: .5rem;
+  padding-right: 0.5rem;
   background-color: var(--input-color);
   color: var(--text-color);
 }
@@ -654,6 +785,8 @@ body.dark-theme .input::placeholder {
 .subscribe__input::placeholder {
   color: var(--text-color);
 }
+
+
 
 /*=============== SPONSORS ===============*/
 .sponsor__container {
@@ -682,7 +815,7 @@ body.dark-theme .input::placeholder {
   row-gap: 2rem;
 }
 
-.footer__title, 
+.footer__title,
 .footer__subtitle {
   font-size: var(--h3-font-size);
 }
@@ -724,7 +857,8 @@ body.dark-theme .input::placeholder {
   text-align: center;
 }
 
-.footer__copy, .footer__terms-link {
+.footer__copy,
+.footer__terms-link {
   font-size: var(--small-font-size);
   color: var(--text-color-light);
 }
@@ -745,11 +879,11 @@ body.dark-theme .input::placeholder {
   right: 1rem;
   bottom: -20%;
   background-color: var(--first-color);
-  padding: .5rem;
+  padding: 0.5rem;
   display: flex;
-  opacity: .9;
+  opacity: 0.9;
   z-index: var(--z-tooltip);
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .scrollup:hover {
@@ -769,7 +903,7 @@ body.dark-theme .input::placeholder {
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
-  width: .60rem;
+  width: 0.6rem;
   background-color: var(--scroll-bar-color);
 }
 
@@ -811,7 +945,7 @@ body.dark-theme .input::placeholder {
 @media screen and (min-width: 568px) {
   .video__container {
     display: grid;
-    grid-template-columns: .6fr;
+    grid-template-columns: 0.6fr;
     justify-content: center;
   }
   .place__container {
@@ -848,7 +982,8 @@ body.dark-theme .input::placeholder {
     flex-direction: row;
     column-gap: 4rem;
   }
-  .nav__toggle, .nav__close {
+  .nav__toggle,
+  .nav__close {
     display: none;
   }
   .change-theme-name {
@@ -877,7 +1012,7 @@ body.dark-theme .input::placeholder {
   }
   .home__container {
     height: 100vh;
-    grid-template-rows: 1.8fr .5fr;
+    grid-template-rows: 1.8fr 0.5fr;
   }
   .home__data {
     align-self: flex-end;
@@ -895,7 +1030,8 @@ body.dark-theme .input::placeholder {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
   }
-  .about__data, .about__title {
+  .about__data,
+  .about__title {
     text-align: initial;
   }
   .about__title {
@@ -929,7 +1065,7 @@ body.dark-theme .input::placeholder {
     padding: 3.5rem 0;
   }
   .subscribe__input {
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
   }
   .footer__rights {
     flex-direction: row;
@@ -944,7 +1080,7 @@ body.dark-theme .input::placeholder {
     margin-right: auto;
   }
   .home__container {
-    grid-template-rows: 2fr .5fr;
+    grid-template-rows: 2fr 0.5fr;
   }
   .home__info {
     width: 328px;
@@ -989,7 +1125,7 @@ body.dark-theme .input::placeholder {
     top: 3rem;
   }
   .video__container {
-    grid-template-columns: .7fr;
+    grid-template-columns: 0.7fr;
   }
   .video__description {
     padding: 0 8rem;
@@ -997,7 +1133,8 @@ body.dark-theme .input::placeholder {
   .place__container {
     gap: 3rem 2rem;
   }
-  .place__card, .place__img {
+  .place__card,
+  .place__img {
     height: 263px;
   }
   .footer__content {
@@ -1016,7 +1153,8 @@ body.dark-theme .input::placeholder {
   body {
     margin: 0;
   }
-  .home__container, .home__img {
+  .home__container,
+  .home__img {
     height: 640px;
   }
 }
