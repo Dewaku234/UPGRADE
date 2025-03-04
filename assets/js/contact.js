@@ -1,33 +1,31 @@
 /*==================== SHOW MENU ====================*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+      navClose = document.getElementById('nav-close');
 
 /*===== MENU SHOW =====*/
-/* Validate if constant exists */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.add('show-menu');
+    });
 }
 
 /*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
+if (navClose) {
+    navClose.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu');
+    });
 }
 
 /*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
+const navLink = document.querySelectorAll('.nav__link:not(.nav__dropdown-toggle)'); // Exclude dropdown toggle
 
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
+function linkAction() {
+    const navMenu = document.getElementById('nav-menu');
     // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
+    navMenu.classList.remove('show-menu');
 }
-navLink.forEach(n => n.addEventListener('click', linkAction))
+navLink.forEach(n => n.addEventListener('click', linkAction));
 
 /*==================== DROPDOWN FUNCTIONALITY ====================*/
 document.querySelectorAll('.nav__dropdown-toggle').forEach(toggle => {
@@ -58,6 +56,7 @@ document.addEventListener('click', (e) => {
     });
 });
 
+
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader(){
     const header = document.getElementById('header')
@@ -78,8 +77,6 @@ let swiper = new Swiper(".discover__container", {
         rotate: 0,
     },
 })
-
-
 
 /*==================== SHOW SCROLL UP ====================*/ 
 function scrollUp(){
@@ -137,11 +134,6 @@ sr.reveal(`.about__img-overlay,
            .video__content,
            .subscribe__form`,{
     origin: 'right',
-    interval: 100,
-})
-
-sr.reveal(`.contact-form, .contactMethod, .method`, {
-    origin: 'bottom',
     interval: 100,
 })
 
